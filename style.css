@@ -1,0 +1,284 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    color: whitesmoke;
+    background: url("site/bg.jpg") black no-repeat center ;
+    background-size: cover;
+}
+
+.header__main {
+    padding-left: 5vw;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 75px;
+    line-height: 75px;
+    background-color: rgba(0, 0, 0, .33);
+}
+
+.nav__list {
+    text-align: start;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav__list-item {
+    text-transform: uppercase;
+    letter-spacing: .25em;
+}
+
+.nav__list-item a {
+    padding: 0 1em;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.hamburger__btn {
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 30px;
+    display: none;
+}
+
+.icon--active {
+    visibility: visible;
+}
+
+.icon--hidden {
+    visibility: hidden;
+}
+
+.projs-item__popup-btn:hover, .nav__list-item a:hover {
+    background: rgba(255, 255, 255, .7);
+    color: black;
+}
+
+.header-promo {
+    padding-bottom: 100px;
+    font-size: 48px;
+}
+
+@media (max-width: 767px) {
+
+    .hamburger__btn {
+        display: block;
+    }
+
+    .hamburger {
+        position: absolute;
+        flex-direction: column;
+        top: 75px;
+        right: 0;
+        background-color: rgba(0, 0, 0, .33);
+        visibility: hidden;
+    }
+
+    .hamburger--visible {
+        visibility: visible;
+    }
+
+    .hamburger a {
+        display: block;
+    }
+}
+
+/*ABOUT*/
+
+#about {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 100px 5vw;
+    background: linear-gradient(ghostwhite, #cbd1d2) ;
+}
+
+.person-photo {
+    position: relative;
+    flex-grow: 1;
+    margin-right: 100px;
+    background: url("site/image.jpg") no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    width: 500px;
+    height: 300px;
+}
+
+.person-photo img {
+    position: absolute;
+    right: -50px;
+    bottom: -25px;
+}
+
+.person-about {
+    flex-basis: 40%;
+    margin-left: 50px;
+}
+
+@media (max-width: 767px) {
+
+    #about {
+        flex-wrap: wrap;
+    }
+
+    .person-about {
+        flex-basis: auto;
+        margin: 50px 0 0 0;
+    }
+
+}
+
+/*portfolio*/
+
+#portfolio {
+    padding: 100px 5vw;
+    background: linear-gradient(ghostwhite, #cbd1d2);
+}
+
+.port__title {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.port__projs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.projs-item {
+    position: relative;
+    margin: 15px;
+}
+
+@media (max-width: 767px) {
+
+    .projs-item img {
+        max-width: 100%;
+        height: 200px;
+    }
+}
+
+.projs-item__name {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1em;
+    text-align: center;
+    margin: auto;
+}
+
+.projs-item__popup-btn {
+    width: 100%;
+    height: 40px;
+    border: none;
+    background: rgba(0, 0, 0, .7);
+    color: whitesmoke;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+}
+
+.projs-item__popup-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+
+.popup .projs-item__popup-btn {
+    position: static;
+}
+
+.contacts {
+    padding: 50px 5vw;
+    text-align: center;
+}
+
+.contacts__title {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.contacts__main {
+    line-height: 1.5em;
+    margin-bottom: 20px;
+}
+
+.contacts__links {
+    display: inline-flex;
+}
+
+.contacts__links-item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.contacts__links-item svg {
+    width: 25px;
+    height: 25px;
+}
+
+.contacts__links-item svg :hover {
+    fill: #000;
+}
+
+footer {
+    background: black;
+    color: whitesmoke;
+    text-align: end;
+    padding: 5px 5vw;
+    text-transform: uppercase;
+    line-height: 1.5;
+    font-size: smaller;
+}
+
+.window {
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.popup {
+    position: absolute;
+    background: whitesmoke;
+    text-align: center;
+    padding: 25px;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.popup__title {
+    margin-bottom: 25px;
+}
+
+.popup__body {
+    margin-bottom: 25px;
+}
